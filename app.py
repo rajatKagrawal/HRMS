@@ -1,7 +1,9 @@
 from flask import Flask
+from models import User
+from settings import app, db
 
-app = Flask(__name__)
-
+db.create_all()
+db.session.commit()
 
 @app.route('/')
 def hello_world():
